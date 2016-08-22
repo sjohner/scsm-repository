@@ -10,19 +10,19 @@
  11/04/2015 1.0
  Initial Release
 
- .SYNOPSIS
+ .Synopsis
  This script updates Service Manager enums based on a MySQL query.
 
- .DESCRIPTION
+ .Description
  The script establishes a connection to a MySQL database and updates a defined enumeration list according to the defined MySQL query
  The user which runs the script needs to be part of the "Author" role to update enum lists. Also the script needs to be executed on a
  Service Manager management server where MySQL Connector/Net ADO.NET driver and SMLets are installed (see http://dev.mysql.com/downloads/connector/net/)
  Do not forget to update credentials for SQL connection string.
 
- .EXAMPLE
+ .Example
  .\Update-SCSMEnumList.ps1 -Verbose
 
- .LINK
+ .Link
  http://github.com/sjohner/SCSM-ScriptRepository
 
 #>
