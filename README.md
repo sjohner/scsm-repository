@@ -5,10 +5,10 @@ Multiple PowerShell Scripts to be used with System Center Service Manager. Most 
 ### Get-ReviewActivities.ps1
 Recursively gets all Review Activities which are related to a given WorkItem. 
 
-### Check-NotificationTemplateUsage
+### Check-NotificationTemplateUsage.ps1
 Checks for a given notification template if it is used in any notification subscription.
 
-### Update-EnumList
+### Update-EnumList.ps1
 Updates Service Manager enum lists based on results of a given MySQL query
 
 ## Authors
