@@ -1,6 +1,6 @@
 <#
  .Notes
- NAME: Check-NotificationTemplateUsage.ps1
+ NAME: Check-SCSMNotificationTemplateUsage.ps1
  AUTHOR: Stefan Johner
  Website: http://blog.jhnr.ch
  Twitter: http://twitter.com/JohnerStefan
@@ -26,7 +26,10 @@
  DisplayName, Name and Id properties of the workflow or notification subscriptions which use the given template
 
  .Example
- .Check-NotificationTemplateUsage.ps1 -TemplateId "5120d091-efef-b47a-f942-6905250f577f"
+ .Check-SCSMNotificationTemplateUsage.ps1 -TemplateId "5120d091-efef-b47a-f942-6905250f577f"
+ 
+ .Link
+ http://github.com/sjohner/SCSM-ScriptRepository
 
 #>
 
