@@ -22,7 +22,6 @@
  Specify the GUID of the template you want to check usage for
 
  .Outputs
- [ref]
  DisplayName, Name and Id properties of the workflow or notification subscriptions which use the given template
 
  .Example
