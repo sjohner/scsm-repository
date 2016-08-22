@@ -1,6 +1,6 @@
 <#
  .Notes
- NAME: Get-ReviewActivities.ps1
+ NAME: Get-SCSMReviewActivities.ps1
  AUTHOR: Stefan Johner
  Website: http://blog.jhnr.ch
  Twitter: http://twitter.com/JohnerStefan
@@ -10,21 +10,25 @@
  20/07/2015 1.0
  Initial Release
  
- .SYNOPSIS
- This script gets all Review Activities for a given WorkItem.
+ .Synopsis
+ This script gets all Review Activities for a given work item.
  
- .DESCRIPTION
- When run on a Service Manager Management Server, the script will get all Review Activities which are related to a given WorkItem.
+ .Description
+ When run on a Service Manager Management Server, the script will get all Review Activities which are related to a given work item.
  You can easily alter the function to get other activity types by just changing ReviewActivityClass variable to a class of your needs.
- 
- .EXAMPLE
- ./Get-ReviewActivities -WorkItem "SR12345"
-
- .NOTES
  The script has to be run on a Service Manager Management server and SMLets cmdlets have to be available.
  
- .LINK
- http://scsmlab.com
+ .Parameter WorkItemId
+ Specify the Id of the work item you want to find Review Activities for
+ 
+ .Outputs
+ Review Activities which are related to the given work item
+ 
+ .Example
+ ./Get-SCSMReviewActivities -WorkItem "SR12345"
+
+ .Link
+ http://github.com/sjohner/SCSM-ScriptRepository
  
 #>
 
