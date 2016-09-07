@@ -76,7 +76,7 @@ try
 		Throw "Can't get System.RelationReviewActivityHasReviewer relationship"
 	}
 	
-	# Get the relationship class System.ReviewerIsUser$$
+	# Get the relationship class System.ReviewerIsUser$
 	$RelationReviewerIsUser = Get-SCSMRelationshipClass ^System.ReviewerIsUser$
 	if($RelationReviewerIsUser -eq $null)
 	{
@@ -87,7 +87,7 @@ try
 	$Reviewers = @()
 	$Reviewers = Get-SCSMRelatedObject -SMObject $ActivityObj -Relationship $RelationReviewActivityHasReviewer
 	
-	# Get relationship object System.WorkItemAffectedUser class where source is the given SR
+	# Get related object for System.ReviewerIsUser rel for each of the given Reviewer objects
 	foreach ($Reviewer in $Reviewers)
 	{
 		$ReviewerUser = Get-SCSMRelatedObject -SMObject $Reviewer -Relationship $RelationReviewerIsUser
