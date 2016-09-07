@@ -4,11 +4,11 @@
  AUTHOR: Stefan Johner
  Website: http://blog.jhnr.ch
  Twitter: http://twitter.com/JohnerStefan
- Version: 1.1
+ Version: 1.2
  CREATED: 20/07/2015
  LASTEDIT:
- 20/07/2015 1.0
- Initial Release
+ 07/09/2016 1.2
+ Minor corrections
  
  .Synopsis
  This script gets all Review Activities for a given work item.
@@ -25,7 +25,7 @@
  Review Activities which are related to the given work item
  
  .Example
- ./Get-SCSMReviewActivities -WorkItem "SR12345"
+ ./Get-SCSMReviewActivities -WorkItemId "SR12345"
 
  .Link
  http://github.com/sjohner/SCSM-ScriptRepository
@@ -38,9 +38,11 @@ Param(
 )
 
 try {
-
 	#Import SMLets module
-	import-module smlets
+	If ( ! (Get-module SMLets ))
+	{
+		Import-Module SMLets
+	}
 	
 	#Get necessary classes and relationships
 	$ReviewActivityClass = Get-SCSMClass -Name ^System.WorkItem.Activity.ReviewActivity$
@@ -85,15 +87,16 @@ try {
 	#Find related Review Activities
 	getReviewActivities -WorkItem $WorkItemObj
 	
-	#Remove SMLets
+	#Remove SMLets module
 	Remove-Module smlets -force
 	
 	#Output RAs
 	$ReviewActivities
 }
-catch {
+catch
+{
 	#Throw error
-    Throw "@   
-    $error[0]
-    @"  
+	Throw "@   
+	$error[0]
+	@"  
 }
