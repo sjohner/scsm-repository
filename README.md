@@ -20,4 +20,4 @@ Updates Service Manager enum lists based on results of a given MySQL query.
 See also the list of [contributors](https://github.com/sjohner/SCSM-ScriptRepository/contributors) who participated in this project.
 
 ## License
-This project is licensed under the GNU General Public License - see the [LICENSE.md](LICENSE.md) file for details
+This project is licensed under the GNU General Public License - see the [LICENSE](LICENSE) file for details
