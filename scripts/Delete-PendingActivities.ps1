@@ -4,7 +4,7 @@
 This script deletes all Activities with status "Pending"
  
 .DESCRIPTION 
-The script gets all Activities with status "Pending" and deletes them after promting the user. Be carefull when using this script!
+The script gets all Activities with status "Pending" and deletes them after promting the user. Be careful when using this script!
  
 .EXAMPLE 
 .\Delete-PendingActivities.ps1 -ComputerName 'SM02' -Verbose 
