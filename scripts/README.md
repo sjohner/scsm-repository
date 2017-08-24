@@ -5,6 +5,9 @@ Multiple PowerShell Scripts to be used with System Center Service Manager. Most 
 ### Check-SCSMNotificationTemplateUsage.ps1
 Checks for a given notification template if it is used in any notification subscription.
 
+### Delete-PendingActivities
+Deletes all pending activities. Be careful!
+
 ### Get-SCSMReviewActivities.ps1
 Recursively gets all Review Activities which are related to a given WorkItem.
 
