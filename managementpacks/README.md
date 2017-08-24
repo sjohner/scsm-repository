@@ -1,4 +1,4 @@
-# SCSM-MpRepository
+# System Center Service Manager sample management packs
 Multiple XML Management Packs to be used with System Center Service Manager. Most of them are referenced somewhere on my [blog](https://blog.jhnr.ch/)
 
 ## Available management packs in this repository
