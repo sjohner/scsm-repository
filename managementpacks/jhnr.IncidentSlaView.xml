@@ -1,0 +1,52 @@
+﻿<ManagementPack ContentReadable="true" SchemaVersion="2.0" OriginalSchemaVersion="2.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+  <Manifest>
+    <Identity>
+      <ID>jhnr.IncidentSlaView</ID>
+      <Version>1.0.0.0</Version>
+    </Identity>
+    <Name>jhnr.IncidentSlaView</Name>
+    <References>
+      <Reference Alias="CoreIncident">
+        <ID>System.WorkItem.Incident.Library</ID>
+        <Version>7.5.2905.0</Version>
+        <PublicKeyToken>31bf3856ad364e35</PublicKeyToken>
+      </Reference>
+      <Reference Alias="SLACore">
+        <ID>System.SLA.Library</ID>
+        <Version>7.5.2905.0</Version>
+        <PublicKeyToken>31bf3856ad364e35</PublicKeyToken>
+      </Reference>
+      <Reference Alias="WorkItem">
+        <ID>System.WorkItem.Library</ID>
+        <Version>7.5.2905.0</Version>
+        <PublicKeyToken>31bf3856ad364e35</PublicKeyToken>
+      </Reference>
+    </References>
+  </Manifest>
+  <TypeDefinitions>
+    <EntityTypes>
+      <TypeProjections>
+        <TypeProjection ID="jhnr.IncidentSlaView.TypeProjection" Accessibility="Public" Type="CoreIncident!System.WorkItem.Incident">
+          <Component Path="$Target/Path[Relationship='WorkItem!System.WorkItemAssignedToUser']$" Alias="AssignedUser" />
+          <Component Path="$Target/Path[Relationship='WorkItem!System.WorkItemAffectedUser']$" Alias="AffectedUser" />
+          <Component Path="$Target/Path[Relationship='SLACore!System.WorkItemHasSLAInstanceInformation' SeedRole='Source' TypeConstraint='SLACore!System.SLA.Instance.TimeInformation']$" Alias="SLAInstances">
+            <Component Path="$Context/Path[Relationship='SLACore!System.SLA.Instance.InformationRefersToSLAConfiguration']$" Alias="SLAConfiguration" />
+          </Component>
+        </TypeProjection>
+      </TypeProjections>
+    </EntityTypes>
+  </TypeDefinitions>
+  <LanguagePacks>
+    <LanguagePack ID="ENU" IsDefault="true">
+      <DisplayStrings>
+        <DisplayString ElementID="jhnr.IncidentSlaView">
+          <Name>jhnr.ch Incident SLA View Example</Name>
+          <Description>Contains TypeProjection used to show SLA information for Incident views</Description>
+        </DisplayString>
+        <DisplayString ElementID="jhnr.IncidentSlaView.TypeProjection">
+          <Name>jhnr.ch Custom Incident view SLA TypeProjection</Name>
+        </DisplayString>
+      </DisplayStrings>
+    </LanguagePack>
+  </LanguagePacks>
+</ManagementPack>

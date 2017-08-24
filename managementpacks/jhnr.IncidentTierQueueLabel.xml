@@ -1,0 +1,138 @@
+﻿<ManagementPack ContentReadable="true" SchemaVersion="2.0" OriginalSchemaVersion="1.1" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+  <Manifest>
+    <Identity>
+      <ID>jhnr.IncidentTierQueueLabel</ID>
+      <Version>1.0.0.0</Version>
+    </Identity>
+    <Name>jhnr.IncidentTierQueueLabel</Name>
+    <References>
+      <Reference Alias="System">
+        <ID>System.Library</ID>
+        <Version>7.5.8501.0</Version>
+        <PublicKeyToken>31bf3856ad364e35</PublicKeyToken>
+      </Reference>
+      <Reference Alias="Console">
+        <ID>Microsoft.EnterpriseManagement.ServiceManager.UI.Console</ID>
+        <Version>7.5.3079.0</Version>
+        <PublicKeyToken>31bf3856ad364e35</PublicKeyToken>
+      </Reference>
+      <Reference Alias="Alias_858ef8ce_65ce_4da1_95a5_a08aa1654edb">
+        <ID>ServiceManager.IncidentManagement.Library</ID>
+        <Version>7.5.3079.0</Version>
+        <PublicKeyToken>31bf3856ad364e35</PublicKeyToken>
+      </Reference>
+      <Reference Alias="Alias_4b0b94c8_28fe_429b_abc7_b37c9a51f3a1">
+        <ID>System.WorkItem.Incident.Library</ID>
+        <Version>7.5.3079.0</Version>
+        <PublicKeyToken>31bf3856ad364e35</PublicKeyToken>
+      </Reference>
+      <Reference Alias="Alias_e24cec63_07d5_4642_ade1_e16aece522fa">
+        <ID>System.WorkItem.Library</ID>
+        <Version>7.5.3079.0</Version>
+        <PublicKeyToken>31bf3856ad364e35</PublicKeyToken>
+      </Reference>
+      <Reference Alias="Alias_651f9bd1_0f7b_4f81_877c_3d657ffc9c44">
+        <ID>System.WorkItem.Activity.Library</ID>
+        <Version>7.5.3079.0</Version>
+        <PublicKeyToken>31bf3856ad364e35</PublicKeyToken>
+      </Reference>
+      <Reference Alias="Alias_75f4e3ad_1b4c_4e02_aaef_8552a036b292">
+        <ID>System.Knowledge.Library</ID>
+        <Version>7.5.3079.0</Version>
+        <PublicKeyToken>31bf3856ad364e35</PublicKeyToken>
+      </Reference>
+      <Reference Alias="Alias_c5e4cf8b_b7fa_45b2_8d02_ba3d038726b4">
+        <ID>System.SupportingItem.Library</ID>
+        <Version>7.5.3079.0</Version>
+        <PublicKeyToken>31bf3856ad364e35</PublicKeyToken>
+      </Reference>
+    </References>
+  </Manifest>
+  <TypeDefinitions>
+    <EntityTypes>
+      <TypeProjections>
+        <TypeProjection ID="CustomForm_47f50fe2_b4f8_4adb_9f43_7569e1f8afe0_TypeProjection" Accessibility="Public" Type="Alias_4b0b94c8_28fe_429b_abc7_b37c9a51f3a1!System.WorkItem.Incident">
+          <Component Path="$Context/Path[Relationship='Alias_4b0b94c8_28fe_429b_abc7_b37c9a51f3a1!System.WorkItem.IncidentPrimaryOwner']$" Alias="PrimaryOwner" />
+          <Component Path="$Context/Path[Relationship='Alias_e24cec63_07d5_4642_ade1_e16aece522fa!System.WorkItemAffectedUser']$" Alias="AffectedUser" />
+          <Component Path="$Context/Path[Relationship='Alias_e24cec63_07d5_4642_ade1_e16aece522fa!System.WorkItemAssignedToUser']$" Alias="AssignedUser" />
+          <Component Path="$Context/Path[Relationship='Alias_e24cec63_07d5_4642_ade1_e16aece522fa!System.WorkItemCreatedByUser']$" Alias="CreatedByUser" />
+          <Component Path="$Context/Path[Relationship='Alias_e24cec63_07d5_4642_ade1_e16aece522fa!System.WorkItem.TroubleTicketClosedByUser']$" Alias="ClosedByUser" />
+          <Component Path="$Context/Path[Relationship='Alias_e24cec63_07d5_4642_ade1_e16aece522fa!System.WorkItem.TroubleTicketResolvedByUser']$" Alias="ResolvedByUser" />
+          <Component Path="$Context/Path[Relationship='Alias_e24cec63_07d5_4642_ade1_e16aece522fa!System.WorkItem.TroubleTicketHasActionLog']$" Alias="ActionLogs" />
+          <Component Path="$Context/Path[Relationship='Alias_e24cec63_07d5_4642_ade1_e16aece522fa!System.WorkItem.TroubleTicketHasUserComment']$" Alias="UserComments" />
+          <Component Path="$Context/Path[Relationship='Alias_e24cec63_07d5_4642_ade1_e16aece522fa!System.WorkItem.TroubleTicketHasAnalystComment']$" Alias="AnalystComments" />
+          <Component Path="$Context/Path[Relationship='Alias_e24cec63_07d5_4642_ade1_e16aece522fa!System.WorkItem.TroubleTicketHasNotificationLog' TypeConstraint='Alias_e24cec63_07d5_4642_ade1_e16aece522fa!System.WorkItem.TroubleTicket.SmtpNotificationLog']$" Alias="SMTPNotifications" />
+          <Component Path="$Context/Path[Relationship='Alias_651f9bd1_0f7b_4f81_877c_3d657ffc9c44!System.WorkItemContainsActivity']$" Alias="Activities">
+            <Component Path="$Context/Path[Relationship='Alias_651f9bd1_0f7b_4f81_877c_3d657ffc9c44!System.WorkItemContainsActivity' SeedRole='Target']$" Alias="ParentWorkItem" />
+            <Component Path="$Context/Path[Relationship='Alias_e24cec63_07d5_4642_ade1_e16aece522fa!System.WorkItemCreatedByUser']$" Alias="ActivityCreatedBy" />
+            <Component Path="$Context/Path[Relationship='Alias_e24cec63_07d5_4642_ade1_e16aece522fa!System.WorkItemAssignedToUser']$" Alias="ActivityAssignedTo" />
+            <Component Path="$Context/Path[Relationship='Alias_e24cec63_07d5_4642_ade1_e16aece522fa!System.WorkItemAboutConfigItem']$" Alias="ActivityAboutConfigItem" />
+          </Component>
+          <Component Path="$Context/Path[Relationship='Alias_e24cec63_07d5_4642_ade1_e16aece522fa!System.WorkItemRelatesToWorkItem']$" Alias="RelatedWorkItems">
+            <Component Path="$Context/Path[Relationship='Alias_e24cec63_07d5_4642_ade1_e16aece522fa!System.WorkItemAffectedUser']$" Alias="RWIAffectedUser" />
+            <Component Path="$Context/Path[Relationship='Alias_e24cec63_07d5_4642_ade1_e16aece522fa!System.WorkItemAssignedToUser']$" Alias="RWIAssignedUser" />
+          </Component>
+          <Component Path="$Context/Path[Relationship='Alias_e24cec63_07d5_4642_ade1_e16aece522fa!System.WorkItemRelatesToWorkItem' SeedRole='Target']$" Alias="RelatedWorkItemsSource">
+            <Component Path="$Context/Path[Relationship='Alias_e24cec63_07d5_4642_ade1_e16aece522fa!System.WorkItemAffectedUser']$" Alias="RWIAffectedUser" />
+            <Component Path="$Context/Path[Relationship='Alias_e24cec63_07d5_4642_ade1_e16aece522fa!System.WorkItemAssignedToUser']$" Alias="RWIAssignedUser" />
+          </Component>
+          <Component Path="$Context/Path[Relationship='Alias_e24cec63_07d5_4642_ade1_e16aece522fa!System.WorkItemAboutConfigItem']$" Alias="AffectedConfigItems" />
+          <Component Path="$Context/Path[Relationship='Alias_e24cec63_07d5_4642_ade1_e16aece522fa!System.WorkItemRelatesToConfigItem']$" Alias="RelatedConfigItems" />
+          <Component Path="$Context/Path[Relationship='Alias_e24cec63_07d5_4642_ade1_e16aece522fa!System.WorkItemAboutConfigItem' TypeConstraint='System!System.Service']$" Alias="RelatedServiceRequests" />
+          <Component Path="$Context/Path[Relationship='Alias_75f4e3ad_1b4c_4e02_aaef_8552a036b292!System.EntityLinksToKnowledgeDocument']$" Alias="RelatedKnowledgeArticles" />
+          <Component Path="$Context/Path[Relationship='Alias_e24cec63_07d5_4642_ade1_e16aece522fa!System.WorkItemHasFileAttachment']$" Alias="FileAttachments">
+            <Component Path="$Context/Path[Relationship='Alias_c5e4cf8b_b7fa_45b2_8d02_ba3d038726b4!System.FileAttachmentAddedByUser']$" Alias="FileAttachmentAddedBy" />
+          </Component>
+        </TypeProjection>
+      </TypeProjections>
+    </EntityTypes>
+  </TypeDefinitions>
+  <Categories>
+    <Category ID="jhnr.IncidentTierQueueLabel.Category" Value="Console!Microsoft.EnterpriseManagement.ServiceManager.ManagementPack">
+      <ManagementPackName>jhnr.IncidentTierQueueLabel</ManagementPackName>
+      <ManagementPackVersion>1.0.0.0</ManagementPackVersion>
+    </Category>
+  </Categories>
+  <Presentation>
+    <Forms>
+      <Form ID="CustomForm_47f50fe2_b4f8_4adb_9f43_7569e1f8afe0" Accessibility="Public" Target="CustomForm_47f50fe2_b4f8_4adb_9f43_7569e1f8afe0_TypeProjection" BaseForm="Alias_858ef8ce_65ce_4da1_95a5_a08aa1654edb!System.WorkItem.Incident.ConsoleForm" TypeName="Microsoft.EnterpriseManagement.ServiceManager.Incident.Forms.IncidentFormControl">
+        <Category>Form</Category>
+        <Customization>
+          <AddControl Parent="StackPanel203" Assembly="PresentationFramework, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Type="System.Windows.Controls.Label" Left="198" Top="15" Right="0" Bottom="0" Row="0" Column="0" />
+          <PropertyChange Object="Label_1" Property="HorizontalAlignment">
+            <NewValue>Left</NewValue>
+          </PropertyChange>
+          <PropertyChange Object="Label_1" Property="Height">
+            <NewValue>Auto</NewValue>
+          </PropertyChange>
+          <PropertyChange Object="Label_1" Property="Content">
+            <NewValue></NewValue>
+          </PropertyChange>
+          <PropertyBindingChange Object="Label_1" Property="Content">
+            <NewBinding Enabled="True" Path="TierQueue.DisplayName" Mode="OneWay" BindsDirectlyToSource="False" UpdateSourceTrigger="Default" />
+          </PropertyBindingChange>
+          <PropertyChange Object="Label_1" Property="IsEnabled">
+            <NewValue>False</NewValue>
+          </PropertyChange>
+          <PropertyChange Object="Label_1" Property="Background">
+            <NewValue>#FFFFE4C4</NewValue>
+          </PropertyChange>
+        </Customization>
+      </Form>
+    </Forms>
+  </Presentation>
+  <LanguagePacks>
+    <LanguagePack ID="ENU" IsDefault="true">
+      <DisplayStrings>
+        <DisplayString ElementID="jhnr.IncidentTierQueueLabel">
+          <Name>jhnr.ch Incident TierQueue Label Example</Name>
+		  <Description>Example of binding selected Incident TierQueue value to a label</Description>
+        </DisplayString>
+        <DisplayString ElementID="CustomForm_47f50fe2_b4f8_4adb_9f43_7569e1f8afe0">
+          <Name>System.WorkItem.Incident.ConsoleForm  (Customized)</Name>
+          <Description>System.WorkItem.Incident.ConsoleForm  (Customized)</Description>
+        </DisplayString>
+      </DisplayStrings>
+    </LanguagePack>
+  </LanguagePacks>
+</ManagementPack>
