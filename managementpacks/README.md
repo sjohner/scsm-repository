@@ -7,11 +7,3 @@ Sample Management Pack which contains TypeProjection used to show SLA informatio
 
 ### jhnr.IncidentTierQueueLabel.xml
 Example of binding selected Incident TierQueue value to a label (see [blog post "Binding Enum Values to a form label"](https://blog.jhnr.ch/2015/11/25/binding-enum-values-to-a-form-label/) for further information).
-
-## Authors
-* **Stefan Johner** - *Initial work* - [sjohner](https://github.com/sjohner)
-
-See also the list of [contributors](https://github.com/sjohner/SCSM-MpRepository/contributors) who participated in this project.
-
-## License
-This project is licensed under the MIT License
