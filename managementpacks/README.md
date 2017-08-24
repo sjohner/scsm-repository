@@ -14,4 +14,4 @@ Example of binding selected Incident TierQueue value to a label (see [blog post 
 See also the list of [contributors](https://github.com/sjohner/SCSM-MpRepository/contributors) who participated in this project.
 
 ## License
-This project is licensed under the GNU General Public License - see the [LICENSE](LICENSE) file for details
+This project is licensed under the MIT License
