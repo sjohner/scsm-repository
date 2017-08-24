@@ -7,4 +7,4 @@ Repository with PowerShell scripts and sample Management Packs for Microsoft Sys
 See also the list of [contributors](https://github.com/sjohner/SCSM-MpRepository/contributors) who participated in this project.
 
 ## License
-This project is licensed under the MIT License - see [License]License for details.
+This project is licensed under the MIT License - see [License] for details.
