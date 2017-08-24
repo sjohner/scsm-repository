@@ -11,6 +11,9 @@ Recursively gets all Review Activities which are related to a given WorkItem.
 ### Get-SCSMReviewers.ps1
 Gets all Reviewers (Users) for a given Review Activity. 
 
+### Install-SCSM2016
+Installs prerequisites and Service Manager Management server
+
 ### Update-SCSMEnumList.ps1
 Updates Service Manager enum lists based on results of a given MySQL query.
 
@@ -20,4 +23,4 @@ Updates Service Manager enum lists based on results of a given MySQL query.
 See also the list of [contributors](https://github.com/sjohner/SCSM-ScriptRepository/contributors) who participated in this project.
 
 ## License
-This project is licensed under the GNU General Public License - see the [LICENSE](LICENSE) file for details
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details
