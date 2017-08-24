@@ -16,11 +16,3 @@ Installs prerequisites and Service Manager Management server
 
 ### Update-SCSMEnumList.ps1
 Updates Service Manager enum lists based on results of a given MySQL query.
-
-## Authors
-* **Stefan Johner** - *Initial work* - [sjohner](https://github.com/sjohner)
-
-See also the list of [contributors](https://github.com/sjohner/SCSM-ScriptRepository/contributors) who participated in this project.
-
-## License
-This project is licensed under the MIT License
