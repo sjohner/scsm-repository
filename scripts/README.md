@@ -1,4 +1,4 @@
-# SCSM-Scripts
+# System Center Service Manager scripts
 Multiple PowerShell Scripts to be used with System Center Service Manager. Most of them make use of the SCSM PowerShell Cmdlets available on [Codeplex](https://smlets.codeplex.com/).
 
 ## Available scripts in this repository
